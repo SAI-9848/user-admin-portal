@@ -34,7 +34,7 @@ logoutBtn.addEventListener("click", async () => {
 // Fetch products
 async function fetchProducts() {
   try {
-    const res = await fetch("http://localhost:3000/Products");
+    const res = await fetch("https://user-admin-portal-1.onrender.com/Products");
     const data = await res.json();
 
     container.innerHTML = "";

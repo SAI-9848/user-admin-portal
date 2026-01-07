@@ -4,7 +4,7 @@ const saveBtn = document.getElementById("saveBtn");
 // FETCH DATA
 async function fetchData() {
   try {
-    const res = await fetch("http://localhost:3000/Products");
+    const res = await fetch("https://user-admin-portal-1.onrender.com/Products");
     const data = await res.json();
     renderData(data);
   } catch (err) {
@@ -60,8 +60,8 @@ async function saveData() {
   const obj = { name, image };
 
   const url = id
-    ? `http://localhost:3000/Products/${id}`
-    : "http://localhost:3000/Products";
+    ? `https://user-admin-portal-1.onrender.com/Products/${id}`
+    : "https://user-admin-portal-1.onrender.com/Products";
 
   const method = id ? "PUT" : "POST";
 
@@ -77,7 +77,7 @@ async function saveData() {
 
 // DELETE
 async function deleteData(id) {
-  await fetch(`http://localhost:3000/Products/${id}`, {
+  await fetch(`https://user-admin-portal-1.onrender.com/Products/${id}`, {
     method: "DELETE",
   });
   fetchData();
@@ -85,7 +85,7 @@ async function deleteData(id) {
 
 // EDIT
 async function editData(id) {
-  const res = await fetch(`http://localhost:3000/Products/${id}`);
+  const res = await fetch(`https://user-admin-portal-1.onrender.com/Products/${id}`);
   const data = await res.json();
 
   document.getElementById("studentId").value = data.id;
