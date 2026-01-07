@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* =====================
+       GLOBAL
+    ===================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+    }
+
+    /* =====================
+       STICKY HEADER
+    ===================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 16px 24px;
+
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    header h2 {
+      font-size: 22px;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    header button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    header button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(99,102,241,0.45);
+    }
+
+    /* =====================
+       PRODUCT GRID
+    ===================== */
+    #container {
+      padding: 40px 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* =====================
+       PRODUCT CARD
+    ===================== */
+    .card {
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 12px 0;
+    }
+
+    .card h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    @media (max-width: 600px) {
+      .card img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h2>USER DASHBOARD</h2>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <!-- PRODUCTS -->
+  <div id="container"></div>
+
+  <!-- USER SCRIPT -->
+  <script type="module" src="./user.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- ADMIN HEADER -->
+  <header class="admin-header">
+    <h1 class="dashboard-title">ADMIN DASHBOARD</h1>
+  </header>
+
+  <!-- FORM -->
+  <input type="hidden" id="studentId" />
+
+  <input type="text" id="name" placeholder="Enter name" />
+  <input type="text" id="image" placeholder="Enter image link" />
+
+  <button id="saveBtn">Save Data</button>
+
+  <!-- DATA CONTAINER -->
+  <div id="container"></div>
+
+ <script type="module" src="./admin.js"></script>
+</body>
+</html>
